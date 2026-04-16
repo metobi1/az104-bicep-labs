@@ -1,0 +1,7 @@
+Virtual Network naming convention
+vnet + Project/Workload + Environment + Instance
+e.g vnet-az104-lab-001, vnet-az104-dev-001, vnet-az104-test-001
+
+Subnet naming convention
+snet + purpose + instance
+e.g snet-vm-001, snet-mgmt-001, snet-web-001
