@@ -12,6 +12,8 @@ param environment string = 'lab'
   '004'
 ])
 param instance string = '001'
+param location string = resourceGroup().location
+param vnetAddressPrefix string = '10.0.0.0/16'
 
 var prefix = 'vnet'
 var project = 'az104'
@@ -19,11 +21,11 @@ var vnetName = '${prefix}-${project}-${environment}-${instance}'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2025-01-01' = {
   name: vnetName
-  location: resourceGroup().location
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.0.0.0/16'
+        vnetAddressPrefix
       ]
     }
   }
